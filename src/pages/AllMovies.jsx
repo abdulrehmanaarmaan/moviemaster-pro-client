@@ -1,21 +1,33 @@
-import React, { use, useState } from 'react';
+import React, { use, useEffect, useState } from 'react';
 import Movie from '../components/Movie';
-import { useLoaderData } from 'react-router';
 import { AuthContext } from '../contexts/AuthContext';
 import toast from 'react-hot-toast';
 import useLoader from '../hooks/useLoader';
 import Loader from '../components/Loader';
+import { useLoaderData } from 'react-router';
 
 const AllMovies = () => {
     const { loading, startLoading, stopLoading } = useLoader();
 
+    const { axiosPublic } = use(AuthContext);
+
     const allMovies = useLoaderData();
+
+    useEffect(() => {
+        startLoading()
+        axiosPublic.get('/movies')
+            .then(res => {
+                stopLoading()
+                console.log(res)
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }, [axiosPublic])
 
     const [filteredMovies, setFilteredMovies] = useState(allMovies);
 
     const [selectedGenres, setSelectedGenres] = useState([]);
-
-    const { axiosPublic } = use(AuthContext);
 
     const genres = ['Sci-Fi', 'Action', 'Thriller', 'Drama', 'Crime', 'Adventure', 'Romance', 'Animation', 'Fantasy', 'Biography', 'History'];
 

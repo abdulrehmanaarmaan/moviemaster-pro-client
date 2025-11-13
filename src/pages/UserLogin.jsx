@@ -26,9 +26,9 @@ const UserLogin = () => {
 
         login(email, password)
             .then(res => {
-                stopLoading()
                 toast.success(loginToast)
                 navigate(location?.state?.from?.pathname || '/')
+                stopLoading()
                 console.log(res.user)
             })
             .catch(error => {
@@ -43,10 +43,10 @@ const UserLogin = () => {
         startLoading()
         googleLogin()
             .then(res => {
-                stopLoading()
                 setUser(res.user)
                 toast.success(loginToast)
                 navigate(location?.state?.from?.pathname || '/')
+                stopLoading()
                 console.log(res.user)
 
                 const newUser = {

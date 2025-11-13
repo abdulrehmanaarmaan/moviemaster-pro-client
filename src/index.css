@@ -111,3 +111,15 @@ body.dark-theme .platform {
 body.dark-theme .error {
   color: red
 }
+
+body .form {
+  background-color: white;
+}
+
+body {
+  color: black;
+}
+
+body .input {
+  background-color: white;
+}

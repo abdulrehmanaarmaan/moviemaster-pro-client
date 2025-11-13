@@ -11,7 +11,7 @@ const RootLayout = () => {
                 <Navbar></Navbar>
             </header>
 
-            <main className='py-20 min-h-screen bg-blue-50 main'>
+            <main className='py-20 min-h-screen bg-blue-50 main text-black'>
                 <Outlet></Outlet>
             </main>
 

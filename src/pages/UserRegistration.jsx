@@ -114,7 +114,7 @@ const UserRegistration = () => {
                     <form onSubmit={handleRegister}>
                         <fieldset className="fieldset">
                             <label className="label">Name</label>
-                            <input type="text" className="input max-w-full w-full" placeholder="Name" name='name' required />
+                            <input type="text" className="inpu max-w-full w-full" placeholder="Name" name='name' required />
                             <label className="label">Email</label>
                             <input type="email" className="input max-w-full w-full" placeholder="Email" name='email' required />
                             <label className="label">Photo URL</label>

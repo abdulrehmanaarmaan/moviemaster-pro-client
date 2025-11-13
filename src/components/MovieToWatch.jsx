@@ -33,7 +33,7 @@ const MovieToWatch = ({ movies, setMovies, movieToWatch }) => {
     if (loading) return <Loader></Loader>
 
     return (
-        <div className='max-w-[1441px] rounded-sm p-4 flex flex-col gap-4 md:gap-0 md:flex-row md:justify-between justify-normal items-center bg-white mx-auto movie'>
+        <div className='max-w-[1440px] rounded-sm p-4 flex flex-col gap-4 md:gap-0 md:flex-row md:justify-between justify-normal items-center bg-white mx-auto movie'>
             <aside className='flex flex-col md:flex-row items-center gap-4 max-w-full w-full md:max-w-fit md:w-fit'>
                 <img className='max-w-full w-full md:max-w-20 md:w-20 max-h-[1%] md:max-h-20 md:h-20 rounded-lg' src={posterUrl} alt="" />
 

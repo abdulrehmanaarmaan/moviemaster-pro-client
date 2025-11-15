@@ -34,11 +34,11 @@ const MyWatchList = () => {
             <div>
                 <h1 className='font-bold text-[48px] mb-10 text-center'>My WatchList</h1>
 
-                <section className='space-y-6 md:space-y-4 px-4'>
+                {movies.length === 0 ? <p className='text-3xl text-center font-bold'>No movies present here.</p> : <section className='space-y-6 md:space-y-4 px-4'>
                     {
                         movies.map(movieToWatch => <MovieToWatch movies={movies} setMovies={setMovies} movieToWatch={movieToWatch} key={movieToWatch._id}></MovieToWatch>)
                     }
-                </section>
+                </section>}
             </div>
         );
     }

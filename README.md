@@ -8,7 +8,7 @@ Features:
 
 * Advanced Filtering System - Filter movies by genres, rating range, release year and more-powered by MongoDB's efficient query operators.
 
-* Featured Movies Carousel - Automatically rotates highlighted movies with smooth animations for an engaging user experience.
+* Featured Movies Carousel - Automatically rotates featured movies with smooth animations for an engaging user experience.
 
 * Theme Toggle (Light/Dark Mode) - Persistent theme switching using localstorage to give users a personalized experience.
 

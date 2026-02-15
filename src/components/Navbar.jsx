@@ -1,31 +1,13 @@
-import React, { use, useEffect } from 'react';
+import React, { use } from 'react';
 import { Link, NavLink } from 'react-router';
 import { AuthContext } from '../contexts/AuthContext';
 import toast from 'react-hot-toast';
-import { useState } from 'react';
 import { FaFilm } from 'react-icons/fa6';
+import { ThemeContext } from '../contexts/ThemeContext';
 
 const Navbar = () => {
+
     const { user, logout } = use(AuthContext);
-
-    const [darkMode, setDarkMode] = useState(() => {
-        const savedTheme = localStorage.getItem('theme');
-        return savedTheme === 'dark';
-    });
-
-    useEffect(() => {
-        if (darkMode) {
-            document.body.classList.add('dark-theme');
-            localStorage.setItem('theme', 'dark');
-        }
-
-        else {
-            document.body.classList.remove('dark-theme');
-            localStorage.setItem('theme', 'light')
-        }
-    }, [darkMode])
-
-
 
     const handleLogout = () => {
         logout()
@@ -37,6 +19,8 @@ const Navbar = () => {
                 console.log(error)
             })
     }
+
+    const { darkMode, setDarkMode } = use(ThemeContext);
 
     return (
         <div className="navbar bg-base-100 shadow-sm md:px-7 px-2 md:flex-row flex-col md:gap-0 gap-4 lg:justify-between md:justify-start">
@@ -79,7 +63,7 @@ const Navbar = () => {
                         <div className='flex items-center gap-4'>
 
                             <div className="dropdown dropdown-center md:dropdown-end">
-                                <img referrerPolicy='no-referrer' tabIndex={0} className='rounded-full w-10 h-10 cursor-pointer' src={user?.photoURL} alt="User profile" />
+                                <img referrerPolicy='no-referrer' tabIndex={0} className='rounded-full w-10 h-10 cursor-pointer object-cover' src={user?.photoURL} alt="User profile" />
                                 <div tabIndex="-1" className="dropdown-content bg-base-100 rounded-box z-2 w-52 p-2 shadow-sm mt-3 menu gap-1 text-center">
                                     <NavLink to='/dashboard/analytics'>Analytics</NavLink>
                                     <NavLink to={`/dashboard/my-collection/${user?.email}`}>My Collection</NavLink>

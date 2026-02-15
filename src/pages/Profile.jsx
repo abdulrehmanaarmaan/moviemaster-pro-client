@@ -196,8 +196,8 @@ const Profile = () => {
 
     return (
         <div>
-            <div className="hero">
-                <div className="card bg-base-100 shrink-0 form w-sm form">
+            <div className="hero px-4">
+                <div className="card bg-base-100 shrink-0 form w-full max-w-sm">
 
                     <div className="card-body gap-0">
                         <form onSubmit={handleUpdateProfile}>

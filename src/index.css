@@ -129,7 +129,7 @@ body {
   @apply text-red-400
 }
 
-body.dark-theme .error {
+.dark-theme .error {
   @apply text-red-700
 }
 

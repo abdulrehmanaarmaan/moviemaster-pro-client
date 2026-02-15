@@ -95,7 +95,7 @@ const AllMovies = () => {
     };
 
     return (
-        <div className='max-w-7xl mx-auto px-4 py-10'>
+        <div className='max-w-7xl mx-auto px-4'>
 
             {/* Title */}
             <h1 className='text-4xl font-bold text-gray-900 text-center mb-8 exceptional-title'>
@@ -117,10 +117,10 @@ const AllMovies = () => {
                 {/* ================= SIDEBAR ================= */}
                 <aside className={`
                     lg:w-1/4
-                    ${showFilters ? 'block' : 'hidden'}
+                    ${showFilters ? 'block mb-11 lg:mb-0' : 'hidden'}
                     lg:block
                 `}>
-                    <h2 className='mb-6 text-3xl font-semibold text-gray-800 tracking-tight route-title'>
+                    <h2 className='mb-4 text-3xl font-semibold text-gray-800 tracking-tight route-title text-center lg:text-left'>
                         Filter by Genre
                     </h2>
 
